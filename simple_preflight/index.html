@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Request & Preflight Request</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .textarea-small {
+        height: 100px; 
+      }
+      .full-width {
+        width: 100%; 
+      }
+    </style>
+    <script src="app.js"></script>
+  </head>
+  <body class="bg-gray-100 flex-col items-center justify-center min-h-screen">
+    <div class="container mx-auto p-4">
+      <div class="flex justify-center items-start space-x-4">
+        <div class="w-2/3 bg-white p-4 shadow-md rounded-lg">
+          <p class="font-semibold mb-2">1. simple request</p>
+          <p class="mb-2">[ 오늘의 식단 ]</p>
+          <form id="form" enctype="multipart/form-data" class="flex-col">
+            <div>
+              <label for="simple1">아침 : </label>
+              <input
+                class="w-full p-1.5 border border-gray-300 rounded-lg my-2"
+                name="simple1"
+                id="simple1"
+              />
+            </div>
+            <div>
+              <label for="simple2">점심 : </label>
+              <input
+                class="w-full p-1.5 border border-gray-300 rounded-lg my-2"
+                name="simple2"
+                id="simple2"
+              />
+            </div>
+            <div>
+              <label for="simple3">저녁 : </label>
+              <input
+                class="w-full p-1.5 border border-gray-300 rounded-lg my-2"
+                name="simple3"
+                id="simple3"
+              />
+            </div>
+            <input
+              type="submit"
+              value="전송"
+              class="w-full px-4 py-2 my-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+            />
+          </form>
+        </div>
+
+      </div>
+    </div>
+    <div class="container mx-auto p-4">
+      <div class="flex justify-between items-start space-x-4">
+        <div class="w-1/2 bg-white p-4 shadow-md rounded-lg">
+          <p class="font-semibold mb-2">2. preflight request</p>
+          <button
+            id="preflightButton"
+            class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+          >
+            데이터 불러오기
+          </button>
+        </div>
+        <div class="w-1/2 bg-white p-4 shadow-md rounded-lg">
+          <p class="font-semibold mb-2">응답 결과</p>
+          <div
+            id="reponse-result"
+            class="textarea-small textarea-narrow p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 mb-2"
+          ></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
